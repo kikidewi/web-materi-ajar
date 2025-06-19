@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="id" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursus Persiapan Tes Bahasa Arab - Pondok Pesantren Modern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c786c;
+            --secondary-color: #004445;
+            --accent-color: #f8b400;
+            --light-color: #faf5e4;
+            --dark-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
+        
+        /* RTL Direction for Arabic content */
+        [dir="rtl"] {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0.8rem 0;
+        }
+        
+        nav ul li {
+            margin: 0 1.2rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .card ul {
+            padding-left: 1.5rem;
+        }
+        
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Course Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .objective-item {
+            background: rgba(44, 120, 108, 0.1);
+            padding: 1.2rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        table th, table td {
+            padding: 0.8rem;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        table tr:hover {
+            background-color: rgba(44, 120, 108, 0.1);
+        }
+        
+        /* Arabic Text */
+        .arabic-text {
+            font-size: 1.2rem;
+            line-height: 2.5;
+            text-align: right;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-right: 4px solid var(--accent-color);
+            border-radius: 4px 0 0 4px;
+            margin: 1rem 0;
+        }
+        
+        /* Resources Section */
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .resource-card {
+            border-top: 3px solid var(--primary-color);
+            background: white;
+            padding: 1.2rem;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #e6a800;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.8rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .objectives, .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>Kursus Persiapan Tes Bahasa Arab</span>
+            <i class="fas fa-mosque"></i>
+        </div>
+        <p>Desain Rancangan Kursus untuk Tes Ujian Pondok Pesantren Modern</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#tujuan">Tujuan Kursus</a></li>
+            <li><a href="#metode">Metode Pembelajaran</a></li>
+            <li><a href="#materi">Materi Ajar</a></li>
+            <li><a href="#evaluasi">Evaluasi</a></li>
+            <li><a href="#resources">Sumber Belajar</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="tujuan">
+            <h2 class="section-title">Tujuan Kursus</h2>
+            <div class="objectives">
+                <div class="objective-item card">
+                    <h3>Penguasaan Materi Tes</h3>
+                    <p>Murid mampu menguasai pelajaran yang sesuai untuk tes bahasa Arab di pondok pesantren modern.</p>
+                </div>
+                <div class="objective-item card">
+                    <h3>Kesiapan Ujian</h3>
+                    <p>Murid mampu mengikuti tes ujian di pondok pesantren modern dari segi ujian tulis dan ujian lisan.</p>
+                </div>
+                <div class="objective-item card">
+                    <h3>Kosakata Bahasa Arab</h3>
+                    <p>Murid diwajibkan menguasai kosa kata bahasa Arab dari dasar hingga tingkat lanjut.</p>
+                </div>
+                <div class="objective-item card">
+                    <h3>Tata Bahasa</h3>
+                    <p>Murid mampu mengembangkan pemahaman tata bahasa Arab (nahwu-sharaf) secara komprehensif.</p>
+                </div>
+                <div class="objective-item card">
+                    <h3>Kemampuan Berbicara</h3>
+                    <p>Murid mampu berpidato dengan menggunakan Bahasa Arab dengan baik dan benar, serta percaya diri di publik.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Target Peserta</h3>
+                <p>Kursus ini dirancang khusus untuk:</p>
+                <ul>
+                    <li>Peserta pada tingkat SD dan SMP</li>
+                    <li>Calon santri yang akan mengikuti tes masuk pondok pesantren modern</li>
+                    <li>Pelajar yang ingin memperdalam bahasa Arab dasar</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="metode">
+            <h2 class="section-title">Metode Pembelajaran</h2>
+            <div class="card">
+                <div class="methods-grid">
+                    <div class="method-item">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Metode Ceramah</h3>
+                        <p>Penyampaian materi secara sistematis dengan penjelasan mendalam dari pengajar.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-comments"></i> Metode Langsung</h3>
+                        <p>Praktik langsung penggunaan bahasa Arab dalam percakapan sehari-hari.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-book"></i> Qowaid dan Tarjamah</h3>
+                        <p>Pembelajaran tata bahasa dan penerjemahan untuk pemahaman struktur kalimat.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-music"></i> Metode Bernyanyi</h3>
+                        <p>Penggunaan lagu dan syair Arab untuk memudahkan menghafal kosakata.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-running"></i> Metode TPR</h3>
+                        <p>Total Physical Response untuk pembelajaran melalui gerakan dan tindakan.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3><i class="fas fa-users"></i> Metode Komunikatif</h3>
+                        <p>Penekanan pada interaksi dan komunikasi aktif dalam bahasa Arab.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Durasi dan Jadwal Kursus</h3>
+                <ul>
+                    <li><strong>Durasi:</strong> 6 bulan (48 sesi)</li>
+                    <li><strong>Frekuensi:</strong> 8 pertemuan per bulan (2x per minggu)</li>
+                    <li><strong>Waktu per sesi:</strong> 60 menit</li>
+                    <li><strong>Hari:</strong> Sabtu dan Minggu pukul 10.00 WIB</li>
+                    <li><strong>Biaya:</strong> Rp50.000 per sesi (Rp400.000 per bulan)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="materi">
+            <h2 class="section-title">Materi Ajar</h2>
+            
+            <div class="card">
+                <h3>Materi Nahwu Wadhih</h3>
+                <p>Buku Nahwu Wadhih adalah buku nahwu (tata bahasa Arab) yang populer, terutama di kalangan pemula, yang ditulis oleh Ali Al-Jarimi dan Musthafa Amin. Buku ini dikenal karena penyajian materinya yang sistematis, mudah dipahami, dan dilengkapi dengan banyak contoh dan latihan.</p>
+                
+                <h4>Materi Nahwu Wadhih 1:</h4>
+                <div class="two-column">
+                    <ul>
+                        <li>Jumlah Mufidah</li>
+                        <li>Bagian-bagian daripada kalimat</li>
+                        <li>Macam-macam fi'il berdasarkan masanya</li>
+                        <li>Fi'il madhi</li>
+                        <li>Fi'il mudharik</li>
+                        <li>Fi'il amr</li>
+                        <li>Fa'il</li>
+                        <li>Maf'ul bih</li>
+                        <li>Perbandingan antara fa'il dan maf'ul bih</li>
+                        <li>Mubtada' dan khobar</li>
+                    </ul>
+                </div>
+                
+                <h4>Materi Nahwu Wadhih 2:</h4>
+                <div class="two-column">
+                    <ul>
+                        <li>Isim mu'tal akhir</li>
+                        <li>Nashab mudharik ba'da an mudmarotun</li>
+                        <li>Jawazim fi'il mudharik</li>
+                        <li>Af'alul khomsa</li>
+                        <li>Macam-macam isim mufrad dan mutsana</li>
+                        <li>Mudaf dan mudaf ilaih</li>
+                        <li>Asmaaul khomsa</li>
+                        <li>Nakiroh dan ma'rifah</li>
+                        <li>Macam-macam dhamir</li>
+                        <li>Isim mausul</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Materi Sharaf (Tasrif)</h3>
+                <p>Pembelajaran pola perubahan kata kerja dalam bahasa Arab dari bentuk dasar hingga berbagai perubahan waktu, pelaku, dan keadaan.</p>
+                
+                <h4>Pokok Bahasan:</h4>
+                <ul>
+                    <li>Pembagian fi'il: Tsulatsi, ruba'i, mujarrad, dan mazid</li>
+                    <li>Tasrif lughawi (kata kerja dalam semua bentuk)</li>
+                    <li>Tasrif ishtilahi (isim fa'il, isim maf'ul, masdar)</li>
+                    <li>Tabel tasrif untuk memudahkan hafalan</li>
+                    <li>Pola fi'il shahih dan fi'il mu'tal</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Mufradat (Kosakata)</h3>
+                <p>Penguasaan kosakata bahasa Arab dari tingkat dasar hingga lanjut.</p>
+                
+                <h4>Kosakata Dasar:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bahasa Arab</th>
+                            <th>Latin</th>
+                            <th>Arti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td dir="rtl">أنا</td>
+                            <td>Ana</td>
+                            <td>Saya</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">نحن</td>
+                            <td>Naḥnu</td>
+                            <td>Kami/Kita</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">أب</td>
+                            <td>Ab</td>
+                            <td>Ayah</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">أم</td>
+                            <td>Umm</td>
+                            <td>Ibu</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">مدرسة</td>
+                            <td>Madrasah</td>
+                            <td>Sekolah</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">كتاب</td>
+                            <td>Kitab</td>
+                            <td>Buku</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h4>Kosakata Tingkat Lanjut:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bahasa Arab</th>
+                            <th>Latin</th>
+                            <th>Arti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td dir="rtl">استنبط</td>
+                            <td>Istanbata</td>
+                            <td>Menyimpulkan, menggali makna</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">مَنهَجِيَّة</td>
+                            <td>Manhajiyyah</td>
+                            <td>Metodologi</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">إِشْكَالِيَّة</td>
+                            <td>Ishkāliyya</td>
+                            <td>Permasalahan</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">مُقَارَنَة</td>
+                            <td>Muqāranah</td>
+                            <td>Perbandingan</td>
+                        </tr>
+                        <tr>
+                            <td dir="rtl">سِيَاق</td>
+                            <td>Siyāq</td>
+                            <td>Konteks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h3>Muhadatsah (Percakapan)</h3>
+                <p>Pelatihan percakapan bahasa Arab dalam berbagai situasi sehari-hari untuk meningkatkan kemampuan komunikasi lisan.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Pidato Bahasa Arab</h3>
+                <p>Pembelajaran dan praktik berpidato dalam bahasa Arab dengan baik dan benar.</p>
+                
+                <h4>Contoh Pembukaan Pidato:</h4>
+                <div class="arabic-text" dir="rtl">
+                    إنَّ الْحَمْدَ لِلَّهِ نَحْمَدُهُ وَنَسْتَعِيْنُهُ وَنَسْتَغْفِرُهُ، وَنَعُوذُ بِاللهِ مِنْ شُرُوْرِ أَنْفُسِنَا، وَمِنْ سَيِّئَاتِ أَعْمَالِنَا، مَنْ يَهْدِهِ اللهُ فَلاَ مُضِلَّ لَهُ، وَمَنْ يُضْلِلْهُ فَلاَ هَادِيَ لَهُ .وَاَشْهَدُ اَنْ لاَ الهَ اِلاَّ لله وَحْدَهُ لاَ شَرِيْكَ لَهُ  صَدَقَ وَعْدَهْ وَنَصَرَ عَبْدَهُ وَاَعَزَّ جُنْدَهُ وَهَزَمَ الأَحْزَابَ وَحْدَهُ. وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُ الَّذِيْ أَرْسَلَهُ للنَّاسِ كَافَّةً بَشِيْرًا وَنَذِيْرًأ
+                </div>
+                
+                <h4>Contoh Penutup Pidato:</h4>
+                <div class="arabic-text" dir="rtl">
+                    وفي الختام، أرجو أن يكونَ ما قدَّمتُه نافعًا ومفيدًا، وأعتذرُ إن وُجدَ تقصيرٌ أو خطأ، فالكمالُ لله وحده جزاكم اللهُ خيرًا على حسنِ استماعكم، وباركَ اللهُ فيكم، والسلام عليكم ورحمة الله وبركاته
+                </div>
+            </div>
+        </section>
+        
+        <section id="evaluasi">
+            <h2 class="section-title">Evaluasi Pembelajaran</h2>
+            <div class="card">
+                <h3>Sistem Evaluasi</h3>
+                <p>Untuk memastikan perkembangan peserta didik, kami menerapkan sistem evaluasi yang komprehensif:</p>
+                
+                <div class="evaluation-grid">
+                    <div class="evaluation-item">
+                        <h4><i class="fas fa-book-open"></i> Ujian Kosakata</h4>
+                        <p>Dilaksanakan setiap 1 bulan sekali untuk mengukur penguasaan mufradat.</p>
+                    </div>
+                    <div class="evaluation-item">
+                        <h4><i class="fas fa-comment-dots"></i> Ujian Lisan</h4>
+                        <p>Percakapan bahasa Arab setiap 1 bulan sekali untuk menilai kemampuan komunikasi.</p>
+                    </div>
+                    <div class="evaluation-item">
+                        <h4><i class="fas fa-pen-fancy"></i> Ujian Tertulis</h4>
+                        <p>Nahwu dan sharaf setiap 1 bulan untuk menilai pemahaman tata bahasa.</p>
+                    </div>
+                    <div class="evaluation-item">
+                        <h4><i class="fas fa-user-tie"></i> Ujian Pidato</h4>
+                        <p>Praktik berpidato bahasa Arab setiap 3 bulan sekali di depan umum.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Kriteria Tes Masuk Pesantren Modern</h3>
+                <p>Kursus ini mempersiapkan peserta untuk menghadapi berbagai komponen tes masuk pesantren modern:</p>
+                
+                <h4>1. Tes Akademik</h4>
+                <ul>
+                    <li>Berhitung dasar</li>
+                    <li>Pemahaman umum</li>
+                </ul>
+                
+                <h4>2. Tes Keislaman</h4>
+                <ul>
+                    <li>Membaca Al-Qur'an dengan tajwid</li>
+                    <li>Pengetahuan dasar agama (rukun iman, rukun Islam)</li>
+                    <li>Fiqih wudhu dan salat</li>
+                    <li>Hafalan doa harian atau surat pendek</li>
+                </ul>
+                
+                <h4>3. Tes Bahasa</h4>
+                <ul>
+                    <li>Bahasa Arab (mufradat, ta'rif diri)</li>
+                    <li>Bahasa Inggris (untuk pesantren bilingual)</li>
+                </ul>
+                
+                <h4>4. Tes Psikologi/Minat Bakat</h4>
+                <ul>
+                    <li>Tes IQ</li>
+                    <li>Observasi sikap dan kedisiplinan</li>
+                </ul>
+                
+                <h4>5. Wawancara</h4>
+                <ul>
+                    <li>Motivasi masuk pesantren</li>
+                    <li>Kesiapan hidup mondok</li>
+                    <li>Dukungan keluarga</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2 class="section-title">Sumber Belajar</h2>
+            
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>Untuk Pengajar</h3>
+                    <ul>
+                        <li><i class="fas fa-book"></i> Buku Nahwu Wadhih</li>
+                        <li><i class="fas fa-book"></i> Buku Sharaf</li>
+                        <li><i class="fas fa-book"></i> Buku Mufradat Bahasa Arab</li>
+                        <li><i class="fas fa-book"></i> Kamus Bahasa Arab</li>
+                        <li><i class="fas fa-file-powerpoint"></i> Materi PPT</li>
+                        <li><i class="fas fa-book"></i> Buku Muhadatsah</li>
+                        <li><i class="fab fa-youtube"></i> Video YouTube</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Untuk Siswa</h3>
+                    <ul>
+                        <li><i class="fas fa-book"></i> Buku Nahwu Wadhih</li>
+                        <li><i class="fas fa-book"></i> Buku Sharaf</li>
+                        <li><i class="fas fa-book"></i> Buku Mufradat Bahasa Arab</li>
+                        <li><i class="fas fa-book"></i> Kamus Bahasa Arab</li>
+                        <li><i class="fas fa-book"></i> Buku Muhadatsah</li>
+                        <li><i class="fab fa-youtube"></i> Video YouTube</li>
+                        <li><i class="fas fa-book"></i> Buku Latihan Berpidato</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta">
+            <h2>Siap Memulai Persiapan Tes Masuk Pesantren?</h2>
+            <p>Daftarkan diri Anda sekarang dan dapatkan pengajaran bahasa Arab terbaik untuk sukses dalam tes masuk pesantren modern.</p>
+            <a href="#contact" class="btn">Daftar Sekarang</a>
+        </div>
+        
+        <section id="contact">
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="card">
+                <h3>Informasi Pendaftaran</h3>
+                <p><i class="fas fa-envelope"></i> Email: info@kursusarabpesantren.com</p>
+                <p><i class="fas fa-phone"></i> Telepon: (021) 1234 5678</p>
+                <p><i class="fas fa-map-marker-alt"></i> Alamat: Jl. Pendidikan No. 123, Jakarta Selatan</p>
+                <p><i class="fas fa-clock"></i> Jam Operasional: Senin-Jumat, 08.00-16.00 WIB</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <span>Kursus Persiapan Tes Bahasa Arab</span>
+                <i class="fas fa-mosque"></i>
+            </div>
+            <p>Desain Rancangan Kursus untuk Tes Ujian Pondok Pesantren Modern</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2023 Kursus Persiapan Tes Bahasa Arab. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>
